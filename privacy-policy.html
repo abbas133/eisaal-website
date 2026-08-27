@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Eisaal</title>
+<meta name="description" content="How the Eisaal app collects, uses, shares, retains and deletes your data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="icon" type="image/png" href="./assets/app-icon.png">
+<link rel="apple-touch-icon" href="./assets/app-icon.png">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="./index.html"><img src="./assets/app-icon.png" alt="" width="34" height="34">EISAAL</a>
+    <nav class="primary" aria-label="Primary"><a href="./index.html">Home</a><a href="./privacy-policy.html" class="active">Privacy</a><a href="./terms.html">Terms</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Applies to the Eisaal mobile app for iOS and Android.</p>
+  <p class="meta">Effective date: <span class="ph">[PLACEHOLDER: EFFECTIVE DATE]</span> &nbsp;·&nbsp; Policy version: 1.0.0 (this is the version number the app records when you accept it)</p>
+  <hr class="rule">
+
+  <p><span class="ph">[PLACEHOLDER: LEGAL ENTITY NAME]</span> (&ldquo;we&rdquo;, &ldquo;us&rdquo;) publishes the Eisaal app. This policy explains what the app collects, why, who else receives it, how long it is kept, and how you can export or delete it. Each item below describes something the app actually does; nothing here is included as a precaution against features we do not have.</p>
+
+  <div class="callout">
+    <h3 style="margin-top:0">Summary</h3>
+    <p><strong>You can use Eisaal without giving us any personal details.</strong> Prayer times, Quran, duas, ziyarat, taqeebat, aamaal, tasbeeh, khums and qibla all work offline on your device. Continuing as a guest creates an anonymous account record on our backend that holds no name, email or profile data — see &sect;1.1.</p>
+    <p><strong>We do not sell your data.</strong> We use no advertising identifiers, show no ads, and do not track you across other apps or websites.</p>
+    <p><strong>Your location is not stored on our servers.</strong> It is used on your device to calculate prayer times and the qibla direction. It is sent to a mapping service only at the moment you ask the app to find your city — see &sect;2.</p>
+    <p><strong>The sajda (Mohr-e-Ameen) feature does not keep or send any image.</strong> On iPhone it reads the camera only as a light meter; each frame is reduced to a single brightness value and discarded.</p>
+    <p><strong>You can delete everything</strong> from inside the app, or by <a class="link" href="./delete-account.html">requesting deletion here</a>.</p>
+  </div>
+
+  <p class="toc"><strong>Contents:</strong>
+    <a href="#collect">1. What we collect</a> ·
+    <a href="#location">2. Location</a> ·
+    <a href="#camera">3. Camera, sensors &amp; photos</a> ·
+    <a href="#notifications">4. Notifications</a> ·
+    <a href="#why">5. Why we use it &amp; legal bases</a> ·
+    <a href="#processors">6. Service providers</a> ·
+    <a href="#transfers">7. International transfers</a> ·
+    <a href="#retention">8. Retention</a> ·
+    <a href="#rights">9. Your rights &amp; how to use them</a> ·
+    <a href="#children">10. Children</a> ·
+    <a href="#security">11. Security</a> ·
+    <a href="#changes">12. Changes</a> ·
+    <a href="#contact">13. Contact</a>
+  </p>
+
+  <h2 id="collect">1. What we collect</h2>
+
+  <h3>1.1 Account and profile data (collected only if you create an account)</h3>
+  <p>Creating an account is optional. It exists so that your favourites, collections and qaza records follow you to a new device. This data is stored in our backend database (Supabase) and is <strong>linked to your identity</strong>.</p>
+  <p><strong>Guest use.</strong> If you tap &ldquo;Continue as Guest&rdquo;, the app creates an <em>anonymous</em> session on our backend. That record is an account identifier and nothing else: no email address, no name, no profile fields. It exists so that the app has a session to work with, and it is deleted along with everything else if you delete your account. <strong>Nothing you record while you are a guest is synced to our servers</strong> — favourites, qaza records and the rest stay on your device until you create a full account.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Data</th><th>Where it comes from</th><th>Why</th></tr>
+      <tr><td>Email address</td><td>You, or your Google / Apple sign-in</td><td>To identify your account and sign you in</td></tr>
+      <tr><td>Account identifier (a random user ID)</td><td>Generated by our backend</td><td>To link your records to your account</td></tr>
+      <tr><td>Name</td><td>You, or your Google / Apple sign-in</td><td>To greet you and personalise the app</td></tr>
+      <tr><td>Profile photo (optional)</td><td>You, from your photo library</td><td>Shown in your profile</td></tr>
+      <tr><td>Gender (optional)</td><td>You</td><td>Fiqh rules that differ by gender (e.g. qaza obligations)</td></tr>
+      <tr><td>City, state / locality, country (optional, typed by you)</td><td>You</td><td>Prayer-time defaults; this is a self-reported place name, not GPS</td></tr>
+      <tr><td><strong>Marja you follow</strong> (optional)</td><td>You</td><td>To show rulings and khums guidance for your marja. This reveals a religious affiliation and we treat it as sensitive — see &sect;5.</td></tr>
+      <tr><td>Khums start date (optional)</td><td>You</td><td>To calculate your khums year</td></tr>
+      <tr><td>Privacy-policy version accepted, and the date you accepted it</td><td>Recorded when you accept</td><td>To prove and manage consent, and to re-prompt if this policy changes</td></tr>
+    </table>
+  </div>
+  <p class="fine"><strong>Profile photos.</strong> Your profile photo is stored in our backend&rsquo;s file storage and the link to it is saved with your account record. That file store is configured for <strong>public read access</strong>: the photo is not listed or indexed by us, but anyone who has the link can open the image without signing in. Please do not upload a photo you would not be willing to share. You can change or remove it at any time in the app, and it is deleted when you delete your account (&sect;9).</p>
+
+  <h3>1.2 Your religious activity records (synced only if you are signed in)</h3>
+  <p>These records are linked to your identity and stored in our backend so that they survive a change of device:</p>
+  <ul>
+    <li>Favourites, favourite collections, and the items inside them</li>
+    <li><strong>Qaza (missed prayer and fast) profiles</strong> — the profile type (yourself, father, mother or other) and, where you enter one, a custom name. If you track qaza on behalf of a relative, including a deceased relative, that name is personal data about another person. Please enter only what you are comfortable storing, and only where you are entitled to record it.</li>
+    <li>Aamaal you have marked for yourself, and personal Hijri calendar events you add</li>
+    <li>App preferences that you have chosen to sync</li>
+  </ul>
+
+  <h3>1.3 Data that stays on your device</h3>
+  <p>The following is stored locally on your phone and is <strong>never uploaded to our servers</strong>. We hold no copy of it, so we cannot read it, recover it or delete it for you. It is removed when you uninstall the app, and it is included if <em>you</em> choose to export your data (&sect;9).</p>
+  <ul>
+    <li>Bookmarks and reading positions</li>
+    <li>Tasbeeh sessions and presets</li>
+    <li>Mohr-e-Ameen (sajda) sessions</li>
+    <li>Khums calculations</li>
+    <li>Aamaal completions</li>
+    <li>Prayer notification settings and manual prayer-time adjustments</li>
+    <li>Cached prayer times, and your last known approximate coordinates (see &sect;2)</li>
+    <li>Interface preferences: theme, fonts, language, translation and transliteration toggles, haptics</li>
+  </ul>
+
+  <h3>1.4 Diagnostics and app usage (released app versions only)</h3>
+  <p>Released builds of the app include Google Firebase Crashlytics and Firebase Analytics. Development builds have both switched off. While you are signed in, both are tagged with your account identifier, so this data is <strong>linked to your identity</strong>. When you sign out, that identifier is cleared.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>What is collected</th><th>By</th><th>Purpose</th></tr>
+      <tr><td>Crash reports and non-fatal error reports: stack traces, device model, OS version, app version, and the account identifier</td><td>Firebase Crashlytics</td><td>To find and fix crashes</td></tr>
+      <tr><td>Screen views — the name of each screen you open in the app</td><td>Firebase Analytics</td><td>To understand which features are used</td></tr>
+      <tr><td>Sign-in events (<code>login</code>, <code>anonymous_sign_in</code>) and whether the session is anonymous</td><td>Firebase Analytics</td><td>To measure sign-in success and guest usage</td></tr>
+      <tr><td>Handled application errors (<code>app_error</code>)</td><td>Firebase Analytics</td><td>Reliability monitoring</td></tr>
+      <tr><td>Standard Firebase measurement data: app instance ID, approximate coarse region derived from IP by Google, device and OS attributes, session timing</td><td>Firebase Analytics</td><td>Baseline analytics that Firebase collects automatically</td></tr>
+    </table>
+  </div>
+  <p><strong>We have explicitly disabled</strong> advertising ID (Android AAID) collection, iOS vendor identifier (IDFV) collection, and ad-personalisation signals. There are no advertising SDKs in the app, no App Tracking Transparency prompt, and no cross-app or cross-site tracking.</p>
+  <p>This version of the app does not include an in-app switch to turn diagnostics off: they are on in released builds and off in development builds. If you would prefer that we did not hold diagnostic data associated with your account, email <span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span> and we will delete the records tied to your account identifier. Uninstalling the app stops all further collection.</p>
+
+  <h3>1.5 Bot protection</h3>
+  <p>Where bot protection is enabled on our sign-in flow, an hCaptcha challenge is loaded from hCaptcha&rsquo;s servers in a web view during sign-in or sign-up. hCaptcha receives your IP address and interaction signals in order to decide whether you are a person rather than an automated script. We do not receive those signals ourselves.</p>
+
+  <h2 id="location">2. Location</h2>
+  <ul>
+    <li>Location is <strong>optional</strong>. You can type a city instead, and the app works without any location permission at all.</li>
+    <li>We request <strong>approximate (coarse) location only</strong>, and only while the app is open. The app declares no background-location permission on either platform and cannot read your location when it is closed.</li>
+    <li>Prayer times and the qibla direction are calculated <strong>entirely on your device</strong>. No location is sent anywhere for that calculation.</li>
+    <li>Your approximate coordinates are stored <strong>only on your device</strong>, in local app storage and a local prayer-times cache. They are never written to your account record on our servers. If you set a city, state or country in your profile, that is a place name you typed, not a coordinate.</li>
+    <li><strong>One disclosure to a third party:</strong> when you tap to detect your location, or type a city and ask the app to find it, the app sends those approximate coordinates, or that place name, to <strong>OpenStreetMap Nominatim</strong> (<code>nominatim.openstreetmap.org</code>), which returns the matching city, state and country. The request also carries a contact email address, which Nominatim&rsquo;s usage policy requires of every application using the service. This happens only at that moment and only on your action — never in the background and never continuously. We keep no server-side record of it. Nominatim is operated by the OpenStreetMap Foundation and handles the request under its own privacy policy.</li>
+    <li>The app also fetches Hijri calendar dates from a public calendar API. That request contains no personal data and no location.</li>
+  </ul>
+
+  <h2 id="camera">3. Camera, sensors and photos</h2>
+  <h3>Mohr-e-Ameen (sajda detection)</h3>
+  <ul>
+    <li><strong>On iPhone and iPad</strong>, this feature asks for camera permission and uses the camera as a light meter. Each frame is read in memory, reduced to a single brightness (lux) number, and immediately discarded. <strong>No image, video or frame is saved to your device, shown to anyone, or transmitted anywhere.</strong> Only the brightness number reaches the app.</li>
+    <li><strong>On Android</strong>, the app uses the phone&rsquo;s hardware ambient-light sensor instead. The app does not declare camera permission on Android at all.</li>
+    <li>The proximity sensor is used on both platforms to detect prostration. Those readings stay on the device.</li>
+  </ul>
+  <h3>Photo library</h3>
+  <p>The app asks for photo access only when you choose a profile picture. Only the single image you select is read, and it is uploaded to our file storage to serve as your avatar. The app never writes to your photo library and never scans it. As noted in &sect;1.1, avatar files are served from a publicly readable URL, so treat the photo you choose as public.</p>
+
+  <h2 id="notifications">4. Notifications</h2>
+  <p>All reminders — prayer times, aamaal and events — are <strong>scheduled locally on your device</strong>. The app contains no push-messaging service: <strong>no push tokens (FCM or APNs) are generated, collected or stored</strong>, and we cannot send you a message remotely.</p>
+
+  <h2 id="why">5. Why we use your data, and our legal bases</h2>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Purpose</th><th>Data used</th><th>Legal basis (UK/EU GDPR)</th></tr>
+      <tr><td>Providing the app&rsquo;s core features</td><td>On-device data, location if granted</td><td>Performance of a contract with you / legitimate interests</td></tr>
+      <tr><td>Creating your account and syncing your records across devices</td><td>&sect;1.1, &sect;1.2</td><td>Performance of a contract with you</td></tr>
+      <tr><td>Showing rulings and khums guidance for your marja</td><td>Marja followed</td><td><strong>Your explicit consent</strong> — this reveals religious belief, a special category of data under Article 9. It is optional; you may leave it blank or clear it at any time in the app.</td></tr>
+      <tr><td>Recording that you accepted this policy</td><td>Policy version + timestamp</td><td>Legal obligation / legitimate interests</td></tr>
+      <tr><td>Keeping the app stable and finding crashes</td><td>&sect;1.4</td><td>Legitimate interests in a working, secure app</td></tr>
+      <tr><td>Preventing automated abuse of sign-in</td><td>hCaptcha signals, IP</td><td>Legitimate interests in security</td></tr>
+      <tr><td>Answering your support emails</td><td>What you send us</td><td>Legitimate interests</td></tr>
+    </table>
+  </div>
+  <p>We do not use your data for advertising, for profiling that produces legal effects, or for automated decision-making. We do not sell personal information, and we do not share it for cross-context behavioural advertising, as those terms are defined under California law.</p>
+
+  <h2 id="processors">6. Service providers who process data for us</h2>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Provider</th><th>Role</th><th>What they receive</th></tr>
+      <tr><td>Supabase</td><td>Backend database, authentication and file storage</td><td>Everything in &sect;1.1 and &sect;1.2, plus connection metadata such as IP address</td></tr>
+      <tr><td>Google (Firebase Crashlytics)</td><td>Crash reporting</td><td>&sect;1.4 crash data, linked to your account identifier</td></tr>
+      <tr><td>Google (Firebase Analytics)</td><td>Product analytics</td><td>&sect;1.4 usage events, linked to your account identifier</td></tr>
+      <tr><td>Google (Google Sign-In)</td><td>Optional sign-in provider</td><td>Only used if you choose it; returns your email, name and photo to us</td></tr>
+      <tr><td>Apple (Sign in with Apple)</td><td>Optional sign-in provider</td><td>Only used if you choose it; returns an identifier and, if you allow it, your email and name</td></tr>
+      <tr><td>hCaptcha</td><td>Bot protection at sign-in, where enabled</td><td>IP address and interaction signals</td></tr>
+      <tr><td>OpenStreetMap Foundation (Nominatim)</td><td>Turning coordinates into a place name, and place names into coordinates</td><td>Approximate coordinates or the place name you typed, plus a contact email in the request header — only at the moment you ask</td></tr>
+      <tr><td>Apple / Google app stores</td><td>App distribution and, where you use it, ratings</td><td>Whatever the store collects under its own policy; we receive only aggregate store reports</td></tr>
+    </table>
+  </div>
+  <p>These providers process data on our instructions, with the exception of the sign-in providers and the app stores, which act as independent controllers for their own purposes. We may also disclose data where the law requires it, or where it is necessary to protect the rights and safety of our users. We have no other routine disclosures, and we do not disclose data to advertisers or data brokers.</p>
+
+  <h2 id="transfers">7. International transfers</h2>
+  <p>Our backend is hosted in <span class="ph">[PLACEHOLDER: SUPABASE HOSTING REGION]</span>. Firebase and the sign-in providers process data in the United States and other countries. Where data leaves the UK or European Economic Area, transfers rely on the providers&rsquo; Standard Contractual Clauses and equivalent safeguards. If you are in the UK or EEA and want a copy of the relevant safeguards, email us.</p>
+
+  <h2 id="retention">8. How long we keep data</h2>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Data</th><th>Retention</th></tr>
+      <tr><td>Account, profile and synced records (&sect;1.1, &sect;1.2)</td><td>Kept while your account exists. Erased when you delete your account.</td></tr>
+      <tr><td>Backups of our database</td><td>Residual copies may persist in encrypted backups for up to <span class="ph">[PLACEHOLDER: BACKUP RETENTION WINDOW]</span> after deletion, then are overwritten.</td></tr>
+      <tr><td>On-device data (&sect;1.3)</td><td>Until you delete it in the app or uninstall the app. We never hold a copy.</td></tr>
+      <tr><td>Crash reports</td><td>Retained by Firebase Crashlytics for up to 90 days, per Google&rsquo;s standard retention for that product.</td></tr>
+      <tr><td>Analytics events</td><td>Retained for <span class="ph">[PLACEHOLDER: FIREBASE ANALYTICS USER-DATA RETENTION SETTING]</span>, as configured in our Firebase project, after which user-level records are deleted and only aggregates remain.</td></tr>
+      <tr><td>Support emails</td><td><span class="ph">[PLACEHOLDER: SUPPORT EMAIL RETENTION PERIOD]</span> after the conversation ends.</td></tr>
+    </table>
+  </div>
+
+  <h2 id="rights">9. Your rights, and exactly how to use them</h2>
+  <p>Depending on where you live, you may have the right to access your data, correct it, export it, delete it, restrict how it is processed, object to processing based on legitimate interests, withdraw a consent you have given, and complain to your data protection authority. We do not charge for these requests, and we will not treat you differently for making one.</p>
+
+  <div class="card">
+    <h3>Export your data — in the app</h3>
+    <p>Open Eisaal &rarr; tap the <strong>settings</strong> icon in the top bar &rarr; <strong>Legal</strong> &rarr; <strong>Data &amp; Privacy</strong> &rarr; <strong>Export My Data</strong>.</p>
+    <p>The app assembles a single JSON file on your device and hands it to your phone&rsquo;s share sheet, so you can save it, email it to yourself, or send it wherever you like. The export includes your profile, settings and preferences, favourites and collections, bookmarks, qaza profiles, your aamaal and aamaal completions, your Hijri events, prayer notification settings, tasbeeh sessions, mohr sessions and khums calculations.</p>
+  </div>
+
+  <div class="card">
+    <h3>Delete your account and data</h3>
+    <p>In the app: <strong>settings</strong> icon &rarr; scroll to <strong>Danger Zone</strong> &rarr; <strong>Delete Account</strong> &rarr; confirm.</p>
+    <p>If you have already uninstalled the app, or you would rather email us, follow the instructions on the <a class="link" href="./delete-account.html">Delete Account page</a>.</p>
+  </div>
+
+  <div class="card">
+    <h3>Everything else</h3>
+    <p>For access, correction, restriction, objection, or to withdraw a consent, email <span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span> from the address on your account, so that we can confirm the request is yours. We reply within <span class="ph">[PLACEHOLDER: SUPPORT RESPONSE TIME]</span> and complete verified requests within <span class="ph">[PLACEHOLDER: DELETION COMPLETION WINDOW]</span>. Most profile fields, including your marja, your gender and your city, can also be edited or cleared yourself in the app at any time.</p>
+  </div>
+
+  <h2 id="children">10. Children</h2>
+  <p>Eisaal is a general-audience religious utility. It is not directed at children, it contains no child-targeted content or features, and we do not knowingly collect personal data from anyone under <span class="ph">[PLACEHOLDER: CHILDREN AGE THRESHOLD]</span>. If you believe a child has given us personal data, email us and we will delete it. Younger users may of course use the app&rsquo;s offline features without an account, under the supervision of a parent or guardian.</p>
+
+  <h2 id="security">11. Security</h2>
+  <p>Traffic between the app and our services is encrypted in transit using TLS. Access to account records in our backend is restricted by row-level security rules, so that one account cannot read another&rsquo;s data. The one deliberate exception is the avatar file store described in &sect;1.1, which is readable by anyone holding the file&rsquo;s link. Data stored on your device is protected by your device&rsquo;s own operating-system protections, so please keep a screen lock enabled. No system is perfectly secure. If we become aware of a breach affecting your data, we will notify you and the relevant authority where the law requires it.</p>
+
+  <h2 id="changes">12. Changes to this policy</h2>
+  <p>If we make a material change to this policy, we will update the effective date and increase the policy version number. The app records which version you accepted and will ask you to review and accept the new version the next time you sign in. The current version is always published at <span class="ph">[PLACEHOLDER: DOMAIN]</span>/privacy-policy.html.</p>
+
+  <h2 id="contact">13. Contact</h2>
+  <p>
+    <span class="ph">[PLACEHOLDER: LEGAL ENTITY NAME]</span><br>
+    <span class="ph">[PLACEHOLDER: REGISTERED POSTAL ADDRESS]</span><br>
+    Email: <a class="link" href="mailto:[PLACEHOLDER: CONTACT EMAIL]"><span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span></a>
+  </p>
+  <p class="fine">If you are in the UK or EEA and we are required to appoint one, our representative is <span class="ph">[PLACEHOLDER: UK/EU REPRESENTATIVE, OR DELETE THIS LINE]</span>. You also have the right to lodge a complaint with your local supervisory authority.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="./index.html">Home</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+    <p class="fine">&copy; <span class="ph">[PLACEHOLDER: LEGAL ENTITY NAME]</span>. Eisaal is an independent project and is not affiliated with Apple Inc. or Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>

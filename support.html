@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Eisaal</title>
+<meta name="description" content="Get help with Eisaal: prayer-time method, notification troubleshooting, data export, account deletion and contact details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="icon" type="image/png" href="./assets/app-icon.png">
+<link rel="apple-touch-icon" href="./assets/app-icon.png">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="./index.html"><img src="./assets/app-icon.png" alt="" width="34" height="34">EISAAL</a>
+    <nav class="primary" aria-label="Primary"><a href="./index.html">Home</a><a href="./privacy-policy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./delete-account.html">Delete Account</a><a href="./support.html" class="active">Support</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Support</h1>
+  <p class="meta">Help with the Eisaal app for iOS and Android.</p>
+  <hr class="rule">
+
+  <div class="card">
+    <h3>Contact us</h3>
+    <p>Email <a class="link" href="mailto:[PLACEHOLDER: CONTACT EMAIL]"><span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span></a> — we reply within <span class="ph">[PLACEHOLDER: SUPPORT RESPONSE TIME]</span>.</p>
+    <p>You can also reach this address from inside the app, at <span class="path">Settings &rarr; Support &rarr; Email Support</span>, which pre-fills your app version and device details so that we have them to hand.</p>
+    <p class="fine">Also available: help centre <span class="ph">[PLACEHOLDER: HELP CENTRE URL, OR DELETE]</span> &nbsp;·&nbsp; Telegram <span class="ph">[PLACEHOLDER: TELEGRAM URL, OR DELETE]</span> &nbsp;·&nbsp; YouTube <span class="ph">[PLACEHOLDER: YOUTUBE URL, OR DELETE]</span> &nbsp;·&nbsp; Facebook <span class="ph">[PLACEHOLDER: FACEBOOK URL, OR DELETE]</span></p>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+
+  <details open>
+    <summary>Which prayer-time calculation method does Eisaal use?</summary>
+    <div class="body">
+      <p>Eisaal uses the <strong>Ja'fari (Shia Ithna-Ashari) method only</strong>. It shows the three prayer periods observed in Shia practice — <strong>Fajr</strong>, <strong>Zohrain</strong> (Zohr and Asr) and <strong>Maghribain</strong> (Maghrib and Isha) — rather than five separate times. There is no option to switch to another school&rsquo;s method, and that is deliberate.</p>
+      <p>Times are calculated <strong>on your device</strong> from your approximate location, or from the city you set. Nothing is fetched from a prayer-time server, so the feature works fully offline once a location is in place.</p>
+      <p>To adjust it: <span class="path">Settings &rarr; Prayer Settings</span> lets you shift individual prayer times by a set number of minutes, which is useful when your local mosque follows a slightly different convention.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>My prayer times look a few minutes off. What should I check?</summary>
+    <div class="body">
+      <ul>
+        <li>Confirm your location is right — <span class="path">Settings &rarr; Prayer Settings</span> &rarr; location. If you have travelled, re-detect it or type your new city.</li>
+        <li>Check your phone&rsquo;s time zone is set automatically.</li>
+        <li>Local mosques often round or apply a precaution of a few minutes. Use the per-prayer minute adjustment in Prayer Settings to match your community.</li>
+        <li>At very high latitudes, and during long summer days, calculated Fajr and Isha are unreliable in every app. Follow your marja&rsquo;s guidance for those months.</li>
+      </ul>
+      <p>Prayer times in the app are calculated approximations. Where the validity of a prayer depends on the exact time, verify with your local mosque or your marja&rsquo;s office.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>I&rsquo;m not getting prayer notifications.</summary>
+    <div class="body">
+      <p>Eisaal schedules all reminders <strong>locally on your device</strong>, with no push server involved, so the cause is almost always a device permission or a battery setting.</p>
+      <p><strong>First, in the app:</strong></p>
+      <ul>
+        <li><span class="path">Settings &rarr; Notifications</span> — make sure prayer reminders are enabled, and that the individual prayers you want (Fajr, Zohrain, Maghribain) are switched on.</li>
+        <li>Make sure a location or city is set, since reminders are scheduled from your prayer times.</li>
+        <li>Open the app from time to time. Reminders are scheduled ahead in batches and are refreshed each time you open it.</li>
+      </ul>
+      <p><strong>On Android:</strong></p>
+      <ul>
+        <li>System Settings &rarr; Apps &rarr; Eisaal &rarr; Notifications — allow notifications, and check the prayer channel is not muted or set to silent.</li>
+        <li>System Settings &rarr; Apps &rarr; Eisaal &rarr; Battery — set to <em>Unrestricted</em>. Aggressive battery optimisation (common on Xiaomi, OnePlus, Oppo, Vivo, Samsung and Huawei devices) is the single most frequent cause of missing alarms.</li>
+        <li>Allow &ldquo;Alarms &amp; reminders&rdquo; if your Android version asks for it.</li>
+        <li>Do not force-stop or swipe the app away from recents repeatedly; on some devices that cancels scheduled alarms.</li>
+      </ul>
+      <p><strong>On iPhone or iPad:</strong></p>
+      <ul>
+        <li>System Settings &rarr; Notifications &rarr; Eisaal — allow notifications, with sounds and banners on.</li>
+        <li>Check Focus / Do Not Disturb and Scheduled Summary are not holding them back — add Eisaal as an allowed app if you use Focus modes.</li>
+        <li>Check the ringer and volume, and that silent mode is not suppressing the alert sound.</li>
+      </ul>
+      <p>If none of that helps, email us with your device model and OS version and we will look into it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I export my data?</summary>
+    <div class="body">
+      <p><span class="path">Settings &rarr; Legal &rarr; Data &amp; Privacy &rarr; Export My Data</span>.</p>
+      <p>The app builds a single <strong>JSON file on your device</strong> and passes it to your phone&rsquo;s share sheet, so you can save it to Files or Drive, email it to yourself, or send it elsewhere. Nothing is emailed automatically; you choose where the file goes.</p>
+      <p>The export includes: your profile, app settings and preferences, favourites and collections, bookmarks, qaza profiles, your aamaal and aamaal completions, personal Hijri events, prayer notification settings, tasbeeh sessions, mohr (sajda) sessions, and khums calculations.</p>
+      <p>If a section cannot be read — for example because you are offline and that section lives in your account — the export still completes and marks the section as unavailable. Run it again with a connection if anything looks missing.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I delete my account?</summary>
+    <div class="body">
+      <p>In the app: <span class="path">Settings &rarr; Danger Zone &rarr; Delete Account</span>. It is immediate and permanent.</p>
+      <p>If you have already uninstalled the app, follow the email route on our <a class="link" href="./delete-account.html">Delete Account page</a>, which also lists exactly what gets erased.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Do I need an account, or an internet connection?</summary>
+    <div class="body">
+      <p>Neither is required for the core of the app. The Quran, duas, ziyarat, taqeebat and aamaal are bundled with the download and read offline, and prayer times, qibla, tasbeeh and khums are all calculated on your device.</p>
+      <p>A connection is needed only to sign in, to sync favourites and qaza records across devices, to look up a city name when you set your location, and to fetch Hijri calendar data.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Why does Mohr-e-Ameen ask for the camera on iPhone?</summary>
+    <div class="body">
+      <p>iPhones do not expose an ambient-light sensor to apps, so on iOS the sajda tracker uses the camera purely as a light meter. Each frame is measured in memory, reduced to a single brightness value, and discarded. <strong>No photo or video is stored, displayed or sent anywhere.</strong></p>
+      <p>On Android the app uses the phone&rsquo;s built-in light sensor and does not request camera permission at all.</p>
+      <p>You can decline camera access; the rest of the app works normally without it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>The app can&rsquo;t detect my location.</summary>
+    <div class="body">
+      <p>Eisaal asks only for <strong>approximate location, and only while the app is open</strong>. If detection fails, check that location services are enabled for Eisaal in your system settings, and that you are not indoors with a weak signal.</p>
+      <p>You never have to grant the permission. In <span class="path">Settings &rarr; Prayer Settings</span> you can type your city, state and country instead, and prayer times are calculated from that.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>The qibla arrow is drifting or pointing the wrong way.</summary>
+    <div class="body">
+      <p>The qibla compass depends on your phone&rsquo;s magnetometer. Move away from metal surfaces, magnets, magnetic phone mounts, laptops and cars, then calibrate by moving the phone in a figure-of-eight a few times. Check that your location is set correctly, since the bearing is computed from it.</p>
+      <p>For an act of worship where direction matters, confirm with a physical compass or your local mosque.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I change the marja I follow, or my other profile details?</summary>
+    <div class="body">
+      <p>Open your profile from Settings and edit it there. Your marja, name, gender, city and khums start date can each be changed or cleared at any time. Recording a marja is optional, and the app works without it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>I found a mistake in an Arabic text, translation or transliteration.</summary>
+    <div class="body">
+      <p>Please tell us. We treat corrections to religious text as the highest-priority reports we receive. Email <span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span> with the name of the dua, ziyarat, surah or aamal, the line in question, and the correction together with its source if you have one.</p>
+      <p>All religious content in Eisaal is reproduced verbatim from published sources. We never generate or paraphrase Arabic text, translations or transliterations ourselves, and every correction is checked against the source before it is published in an update.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I report a bug or request a feature?</summary>
+    <div class="body">
+      <p>Email <span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span>. To help us reproduce a bug, please include:</p>
+      <pre>Device model:   e.g. iPhone 14 / Pixel 8
+OS version:     e.g. iOS 18.2 / Android 15
+App version:    Settings -> About -> Version
+What happened:
+What you expected:
+Steps to reproduce:</pre>
+      <p>Screenshots or a short screen recording help a great deal.</p>
+    </div>
+  </details>
+
+  <h2>Privacy questions</h2>
+  <p>Our <a class="link" href="./privacy-policy.html">Privacy Policy</a> lists every data type the app touches, every service provider involved, and how long each is kept. For access, correction, export or deletion requests, email <a class="link" href="mailto:[PLACEHOLDER: CONTACT EMAIL]"><span class="ph">[PLACEHOLDER: CONTACT EMAIL]</span></a>. You can also delete your account yourself from inside the app.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="./index.html">Home</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+    <p class="fine">&copy; <span class="ph">[PLACEHOLDER: LEGAL ENTITY NAME]</span>. Eisaal is an independent project and is not affiliated with Apple Inc. or Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
