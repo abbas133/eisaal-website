@@ -9,6 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="assets/app-icon.png">
+<script>
+  // Rescue shared download links that pick up a trailing slash or capitals (Pages paths are case-sensitive).
+  if (/^\/download(\.html)?\/?$/i.test(location.pathname)) location.replace("/download" + location.search);
+</script>
 </head>
 <body>
 <header class="site">

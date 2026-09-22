@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Eisaal — iPhone, iPad and Android</title>
+<meta name="description" content="Download Eisaal, the Shia Muslim companion app, from the App Store or Google Play. This link opens the right store for your phone.">
+<link rel="canonical" href="https://eisaal.com/download">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eisaal.com/download">
+<meta property="og:title" content="Download Eisaal">
+<meta property="og:description" content="Prayer times, Quran, duas, ziyarat and more for the Shia Ithna-Ashari community. Opens the right store for your phone.">
+<meta property="og:image" content="https://eisaal.com/assets/app-icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6746689559">
+<script>
+  // Sends phones straight to their store before first paint. ?platform=ios|android forces a
+  // store, ?stay shows the page without redirecting; utm_* params become Play's install referrer.
+  (function () {
+    var stores = {
+      ios: 'https://apps.apple.com/app/id6746689559',
+      android: 'https://play.google.com/store/apps/details?id=com.eisaal.com'
+    };
+    var query = new URLSearchParams(location.search);
+    var ua = navigator.userAgent || '';
+    var forced = (query.get('platform') || '').toLowerCase();
+    var platform =
+      forced === 'ios' || forced === 'android' ? forced :
+      /android/i.test(ua) ? 'android' :
+      // iPadOS 13+ reports a Mac user agent; only the touch points give it away.
+      /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' :
+      'other';
+
+    var utm = [];
+    query.forEach(function (value, key) {
+      if (/^utm_/i.test(key)) utm.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+    });
+    if (utm.length) stores.android += '&referrer=' + encodeURIComponent(utm.join('&'));
+
+    var redirecting = platform !== 'other' && !query.has('stay');
+    window.eisaalDownload = { platform: platform, stores: stores, redirecting: redirecting };
+    document.documentElement.setAttribute('data-platform', platform);
+
+    // replace(), not assign(): Back from the store must not land here and bounce again.
+    if (redirecting) location.replace(stores[platform]);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="icon" type="image/png" href="./assets/app-icon.png">
+<link rel="apple-touch-icon" href="./assets/app-icon.png">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="./index.html"><img src="./assets/app-icon.png" alt="" width="34" height="34">EISAAL</a>
+    <nav class="primary" aria-label="Primary"><a href="./index.html">Home</a><a href="./privacy-policy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <img class="hero-icon" src="./assets/app-icon.png" alt="Eisaal app icon" width="64" height="64">
+    <p class="eyebrow">Download</p>
+    <h1>Get Eisaal</h1>
+    <p class="lede" id="download-status" aria-live="polite">Free on iPhone, iPad and Android. Choose your store below — or open this page on your phone and it will take you there.</p>
+    <div class="store-badges download-badges">
+      <a class="store-badge" data-store="ios" href="https://apps.apple.com/app/id6746689559"><img src="./assets/badges/app-store.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a class="store-badge" data-store="android" href="https://play.google.com/store/apps/details?id=com.eisaal.com"><img src="./assets/badges/google-play.png" alt="Get it on Google Play" width="175" height="52"></a>
+    </div>
+    <p class="fine">iPhone and iPad need iOS 15.5 or later; Android phones and tablets need Android 10 or later.</p>
+  </section>
+
+  <div class="card qr-card">
+    <img class="qr" src="./assets/download-qr.svg" alt="QR code linking to eisaal.com/download" width="132" height="132">
+    <div>
+      <h3>On a computer?</h3>
+      <p>Scan this code with your phone's camera. It opens <strong>eisaal.com/download</strong>, which takes an iPhone or iPad to the App Store and an Android phone to Google Play.</p>
+    </div>
+  </div>
+
+  <h2>Already have the app?</h2>
+  <p>This link works for updates too: if Eisaal is installed, the store page shows <strong>Update</strong> when a newer version is available, or <strong>Open</strong> when you are up to date.</p>
+
+  <div class="callout">
+    <p><strong>Android without Google Play?</strong> Some phones, including recent Huawei models, do not include the Play Store. Eisaal is only published on Google Play and the App Store, so it cannot be installed on those devices at the moment.</p>
+  </div>
+
+  <p class="fine">Questions? See <a class="link" href="./support.html">Support &amp; FAQ</a> or email <a class="link" href="mailto:shortfiqh@gmail.com">shortfiqh@gmail.com</a>.</p>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="./index.html">Home</a><a href="./download.html">Download</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+    <p class="fine">&copy; Eisaal Foundation. Eisaal is an independent project and is not affiliated with Apple Inc. or Google LLC. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
+</footer>
+
+<script>
+  // Runs only when the head script did not leave: a desktop, a ?stay visit, or an in-app
+  // browser that ignored the redirect. Puts this device's store first and names it.
+  (function () {
+    var d = window.eisaalDownload;
+    if (!d || d.platform === 'other') return;
+    var match = document.querySelector('.store-badge[data-store="' + d.platform + '"]');
+    match.href = d.stores[d.platform];
+    match.parentNode.insertBefore(match, match.parentNode.firstChild);
+    var store = d.platform === 'ios' ? 'the App Store' : 'Google Play';
+    var status = document.getElementById('download-status');
+    if (!d.redirecting) return;
+    status.textContent = 'Opening ' + store + '…';
+    setTimeout(function () {
+      status.textContent = 'If ' + store + ' didn’t open, tap the button below.';
+    }, 1500);
+  })();
+</script>
+
+</body>
+</html>

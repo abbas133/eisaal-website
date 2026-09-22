@@ -53,6 +53,24 @@ Set the same values in the app's `PRIVACY_POLICY_URL`, `WEBSITE_URL` and `HELP_C
 dart-defines (GitHub Actions repository variables) so in-app links match — see
 `docs/launch/RECON-AND-DECISIONS.md` § w1–w7 in the app repository.
 
+## Download link — `https://eisaal.com/download`
+
+The link to put in posters, QR codes, social posts and the app's Share sheet. The redirect runs in the
+browser from the user agent; nothing is logged or sent anywhere, so it needs no privacy-policy change.
+
+| Visit | Result |
+|---|---|
+| iPhone / iPad (incl. iPadOS in desktop mode) | App Store `id6746689559` |
+| Android | Google Play `com.eisaal.com` |
+| Desktop, or JavaScript off | The page: both badges + QR code |
+| `?platform=ios` / `?platform=android` | Forces that store (e.g. a store-specific QR) |
+| `?stay` | Shows the page without redirecting — use it to check the page on a phone |
+| `?utm_source=…&utm_campaign=…` | Forwarded to Play as the install `referrer` (Play Console → acquisition reports) |
+
+The store ids are written in `download.html` (head script and badge `href`s) and `index.html` (badge `href`s and the closing script). If the QR code ever
+needs regenerating: `pip install segno`, then
+`segno.make('https://eisaal.com/download', error='m').save('assets/download-qr.svg', border=0, dark='#2C2C2C', light=None, xmldecl=False, omitsize=True)`.
+
 ## Updating
 
 Edit the HTML, push to `main`. Pages redeploys automatically. To preview locally:
