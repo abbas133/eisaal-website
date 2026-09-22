@@ -3,84 +3,243 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eisaal — Islamic Companion App</title>
-<meta name="description" content="Eisaal is a Shia Muslim lifestyle companion: prayer times, Quran, duas, ziyarat, qaza tracking, khums, qibla and the Hijri calendar.">
+<title>Eisaal — Prayer times, Quran and duas for Shia Muslims</title>
+<meta name="description" content="Eisaal is a free companion for the daily practice of Shia Muslims: Ja'fari prayer times, the complete Quran, duas, ziyarat and aamaal, organised around the Hijri calendar. For iPhone, iPad and Android.">
+<link rel="canonical" href="https://eisaal.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eisaal.com/">
+<meta property="og:title" content="Eisaal — a companion for every day of the Islamic year">
+<meta property="og:description" content="Ja'fari prayer times, the complete Quran, duas, ziyarat and aamaal. Free for iPhone, iPad and Android.">
+<meta property="og:image" content="https://eisaal.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // Same detection as download.html, without the redirect: orders the badges and aims the phone bar.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var platform =
+      /android/i.test(ua) ? 'android' :
+      /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' :
+      'other';
+    document.documentElement.setAttribute('data-platform', platform);
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles.css">
+<link rel="preload" as="image" href="./assets/screens/today.webp">
 <link rel="icon" type="image/png" href="./assets/app-icon.png">
 <link rel="apple-touch-icon" href="./assets/app-icon.png">
 </head>
-<body>
+<body class="home">
 
 <header class="site">
-  <div class="wrap bar">
+  <div class="wrap wrap-wide bar">
     <a class="brand" href="./index.html"><img src="./assets/app-icon.png" alt="" width="34" height="34">EISAAL</a>
     <nav class="primary" aria-label="Primary"><a href="./index.html" class="active">Home</a><a href="./privacy-policy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+    <a class="nav-cta" href="./download.html">Download</a>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
-  <section class="hero">
-    <img class="hero-icon" src="./assets/app-icon.png" alt="Eisaal app icon" width="64" height="64">
-    <p class="eyebrow">A companion for daily worship</p>
-    <h1>Eisaal</h1>
-    <p class="lede">Prayer times, Quran, duas, ziyarat, qaza tracking, khums, qibla and the Hijri calendar — for the Shia Ithna-Ashari community. Prayer times and qibla are calculated on your device, and the religious texts are bundled with the app for offline reading.</p>
-    <div class="watermark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M21 17H6.5C5.11929 17 4 18.1193 4 19.5C4 20.8807 5.11929 22 6.5 22H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M21 22C19.6193 22 18.5 20.8807 18.5 19.5C18.5 18.1193 19.6193 17 21 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13.6716 6.66634C13.5044 5.65934 12.9366 3.86426 12.5 3.86426C12.0634 3.86426 11.4956 5.65934 11.3284 6.66634C10.6247 6.87051 9.30887 7.51651 9.30887 8.85286C9.30887 9.5148 9.68432 10.0873 10.2331 10.3616C10.2331 10.9713 11.0625 11.9998 12.5 11.9998C13.9375 11.9998 14.7669 10.9713 14.7669 10.3616C15.3157 10.0873 15.6911 9.5148 15.6911 8.85286C15.6911 7.51651 14.3753 6.87051 13.6716 6.66634Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 19.5H21V2H6.5C5.11929 2 4 3.11929 4 4.5V19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="wrap wrap-wide">
+    <section class="promo-hero" data-light="everyday" aria-labelledby="hero-title">
+      <div class="promo-copy">
+        <h1 id="hero-title">A companion for every day of the Islamic year</h1>
+        <p class="promo-lede">Prayer times by the Ja'fari method, the complete Quran, duas, ziyarat and aamaal, organised around the Hijri calendar. Free, with no ads and no account needed.</p>
+        <div class="store-badges" id="hero-cta">
+          <a class="store-badge" data-store="ios" href="https://apps.apple.com/app/id6746689559"><img src="./assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48"></a>
+          <a class="store-badge" data-store="android" href="https://play.google.com/store/apps/details?id=com.eisaal.com"><img src="./assets/badges/google-play.png" alt="Get it on Google Play" width="161" height="48"></a>
+        </div>
+        <p class="promo-fine">For iPhone and iPad on iOS 15.5 or later, and Android phones and tablets on Android 10 or later.</p>
+      </div>
+
+      <figure class="promo-stage">
+        <div class="phone" id="palette-phone">
+          <img class="is-on" data-light="everyday" src="./assets/screens/today.webp" alt="The Today screen in the everyday light palette: the Zohrain prayer window with its countdown, Fajr and Maghribain either side, and upcoming events" width="330" height="717">
+          <img data-light="night" src="./assets/screens/today-dark.webp" alt="The Today screen in the everyday dark palette" width="330" height="717">
+          <img data-light="joy" src="./assets/screens/today-joy.webp" alt="The Today screen in the Joy palette, used on days of celebration" width="330" height="717">
+          <img data-light="mourning" src="./assets/screens/today-mourning.webp" alt="The Today screen in the Mourning palette, used in Muharram and Safar" width="330" height="717">
+        </div>
+        <figcaption>
+          <div class="light-switch" role="group" aria-label="Show the app in a palette">
+            <button type="button" data-light="everyday" aria-pressed="true">Everyday</button>
+            <button type="button" data-light="night" aria-pressed="false">Night</button>
+            <button type="button" data-light="joy" aria-pressed="false">Joy</button>
+            <button type="button" data-light="mourning" aria-pressed="false">Mourning</button>
+          </div>
+          <p class="light-caption" id="light-caption" aria-live="polite">The app follows the Hijri calendar and changes its light with it. Try the four palettes.</p>
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <section class="tour" aria-labelledby="tour-title">
+    <div class="wrap wrap-wide tour-head">
+      <h2 id="tour-title">Inside the app</h2>
+      <div class="tour-nav">
+        <button type="button" class="tour-btn" data-dir="-1" aria-label="Previous screens" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14.5 6-6 6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="tour-btn" data-dir="1" aria-label="Next screens"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <ul class="tour-track" id="tour-track" tabindex="0" aria-label="App screens — scroll sideways for more">
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/today.webp" alt="" width="330" height="717"></div><h3>Today</h3><p>The prayer window that is open now, when it closes, and the one after it.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/today-lower.webp" alt="" width="330" height="717"></div><h3>What the day asks of you</h3><p>The aamaal for today's weekday, month and occasion, with a daily verse and hadees.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/quran-reader.webp" alt="" width="330" height="717"></div><h3>The complete Quran</h3><p>Translation you can switch on or off, verse search, and your reading place remembered.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/duas.webp" alt="" width="330" height="717"></div><h3>Duas by purpose and occasion</h3><p>Kumayl, Tawassul, Nudba and the rest, alongside Munajat, Salawat and the Sahifas.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/dua-reader.webp" alt="" width="330" height="717"></div><h3>Arabic set with care</h3><p>Choose the typeface and size, with coloured harakat and the translation beneath.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/ziyarat.webp" alt="" width="330" height="717"></div><h3>Ziyarat by personality</h3><p>Find a ziyarat by the Masoomeen (a.s.), by occasion or by place.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/prayer-times.webp" alt="" width="330" height="717"></div><h3>A timetable for any city</h3><p>A month of Fajr, Zohrain and Maghribain, with reminders at the exact computed time.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/tasbeeh.webp" alt="" width="330" height="717"></div><h3>Tasbeeh</h3><p>A counter with presets for the tasbeeh you recite, and your recent sessions.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/khums.webp" alt="" width="330" height="717"></div><h3>Khums, worked out</h3><p>Enter your savings and assets to see the Sahme Imam and Sahme Sadat shares.</p></li>
+      <li class="tour-slide"><div class="phone"><img loading="lazy" src="./assets/screens/tools.webp" alt="" width="330" height="717"></div><h3>Qaza, qibla and the calendar</h3><p>Track missed prayers and fasts, find the qibla, and convert Hijri dates.</p></li>
+    </ul>
   </section>
 
-  <p>Eisaal is published by Eisaal Foundation for the Shia Ithna-Ashari community. Prayer times follow the Ja'fari method only, and every Arabic text, translation and transliteration in the app is reproduced verbatim from a published source. The app is free, carries no advertising, and works without an account.</p>
+  <div class="wrap wrap-wide">
+    <section class="principles" aria-labelledby="principles-title">
+      <h2 id="principles-title">Made for the Shia Ithna-Ashari community</h2>
+      <div class="principle-grid">
+        <div class="principle">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m12 8 2.5 5.5L12 12l-2.5 1.5L12 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <h3>The Ja'fari method only</h3>
+          <p>Three prayer windows, Fajr, Zohrain and Maghribain, with per-prayer minute adjustments. Times and qibla are calculated on your device.</p>
+        </div>
+        <div class="principle">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 17H6.5C5.11929 17 4 18.1193 4 19.5C4 20.8807 5.11929 22 6.5 22H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M21 22C19.6193 22 18.5 20.8807 18.5 19.5C18.5 18.1193 19.6193 17 21 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 19.5H21V2H6.5C5.11929 2 4 3.11929 4 4.5V19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Texts reproduced verbatim</h3>
+          <p>Every Arabic text, translation and transliteration comes from a published source, unedited.</p>
+        </div>
+        <div class="principle">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9.5a12 12 0 0 1 16 0M7 12.8a7.5 7.5 0 0 1 10 0M10 16a3 3 0 0 1 4 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="19" r="1" fill="currentColor"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <h3>Works offline</h3>
+          <p>The Quran and every supplication are bundled with the app, so reading needs no connection.</p>
+        </div>
+        <div class="principle">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <h3>No ads, no account needed</h3>
+          <p>Use everything as a guest. An optional account syncs favourites and the qaza tracker across your devices.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="badges">
-    <a class="badge" href="https://play.google.com/store/apps/details?id=com.eisaal.com">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.5v17c0 .4.4.7.8.5l9.7-8.5L4.8 3.1c-.4-.3-.8 0-.8.4Z" fill="currentColor" opacity=".9"/><path d="m14.5 12.5 2.8 2.5 3.3-1.9c.6-.4.6-1.2 0-1.6l-3.3-1.9-2.8 2.9Z" fill="currentColor" opacity=".7"/><path d="M4.8 3.1 14.5 12.5l2.8-2.9L5.4 3.1c-.2-.1-.4-.1-.6 0ZM5.4 20.9l11.9-6.9-2.8-2.5-9.7 8.5c.2.1.4.1.6 0Z" fill="currentColor" opacity=".5"/></svg>
-      <span><strong>Get it on Google Play</strong></span>
-    </a>
+    <section class="closing" id="closing-cta" aria-labelledby="closing-title">
+      <img class="closing-icon" src="./assets/app-icon.png" alt="" width="72" height="72">
+      <div class="closing-copy">
+        <h2 id="closing-title">Download Eisaal</h2>
+        <p>Free for iPhone, iPad and Android.</p>
+        <div class="store-badges">
+          <a class="store-badge" data-store="ios" href="https://apps.apple.com/app/id6746689559"><img src="./assets/badges/app-store.svg" alt="Download on the App Store" width="144" height="48"></a>
+          <a class="store-badge" data-store="android" href="https://play.google.com/store/apps/details?id=com.eisaal.com"><img src="./assets/badges/google-play.png" alt="Get it on Google Play" width="161" height="48"></a>
+        </div>
+      </div>
+      <div class="closing-qr">
+        <img class="qr" src="./assets/download-qr.svg" alt="QR code linking to eisaal.com/download" width="120" height="120">
+        <p>Scan with your phone's camera to download.</p>
+      </div>
+    </section>
+
+    <h2>Legal &amp; support</h2>
+    <div class="grid">
+      <div class="card"><h3><a class="link" href="./privacy-policy.html">Privacy Policy</a></h3><p>What the app collects, why, which service providers process it, how long it is kept, and how to export or delete it.</p></div>
+      <div class="card"><h3><a class="link" href="./terms.html">Terms of Service</a></h3><p>Your licence to use the app, acceptable use, and the disclaimer that applies to religious content and calculated prayer times.</p></div>
+      <div class="card"><h3><a class="link" href="./delete-account.html">Delete your account</a></h3><p>Step-by-step deletion inside the app, an email route if you have already uninstalled it, and a full list of what is erased.</p></div>
+      <div class="card"><h3><a class="link" href="./support.html">Support &amp; FAQ</a></h3><p>The prayer-time method, notification troubleshooting, data export, and how to report an error in a religious text.</p></div>
+    </div>
+
+    <p class="fine">Eisaal is published by Eisaal Foundation. Email <a class="link" href="mailto:shortfiqh@gmail.com">shortfiqh@gmail.com</a> for support, for privacy and deletion requests, or to report a correction to any religious text in the app.</p>
   </div>
-  <p class="fine">Available for iPhone and iPad, and for Android phones and tablets.</p>
-
-  <hr class="rule">
-
-  <p class="eyebrow">What the app includes</p>
-  <div class="card features">
-    <div class="feature">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m12 8 2.5 5.5L12 12l-2.5 1.5L12 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <div><h3>Prayer times &amp; qibla</h3><p>The Ja'fari method, shown as three prayer windows — Fajr, Zohrain and Maghribain — with per-prayer minute adjustments. Both times and qibla bearing are calculated on your device, so they work offline.</p></div>
-    </div>
-    <div class="feature">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 17H6.5C5.11929 17 4 18.1193 4 19.5C4 20.8807 5.11929 22 6.5 22H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M21 22C19.6193 22 18.5 20.8807 18.5 19.5C18.5 18.1193 19.6193 17 21 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 19.5H21V2H6.5C5.11929 2 4 3.11929 4 4.5V19.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div><h3>Quran &amp; supplications</h3><p>The Quran, duas, ziyarat, taqeebat and aamaal, bundled with the app for offline reading, with translation and transliteration you can switch on or off.</p></div>
-    </div>
-    <div class="feature">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m9 15 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div><h3>Qaza tracking</h3><p>Keep a record of missed prayers and fasts, for yourself or on behalf of a parent or another relative, and mark them off as you make them up.</p></div>
-    </div>
-    <div class="feature">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="6" r="1.2" fill="currentColor"/><circle cx="17.2" cy="9" r="1.2" fill="currentColor"/><circle cx="17.2" cy="15" r="1.2" fill="currentColor"/><circle cx="12" cy="18" r="1.2" fill="currentColor"/><circle cx="6.8" cy="15" r="1.2" fill="currentColor"/><circle cx="6.8" cy="9" r="1.2" fill="currentColor"/></svg></div>
-      <div><h3>Khums &amp; tasbeeh</h3><p>A khums calculator, a digital tasbeeh with saved presets, and the Mohr-e-Ameen sajda tracker. These records stay on your device.</p></div>
-    </div>
-  </div>
-
-  <h2>Legal &amp; support</h2>
-  <div class="grid">
-    <div class="card"><h3><a class="link" href="./privacy-policy.html">Privacy Policy</a></h3><p>What the app collects, why, which service providers process it, how long it is kept, and how to export or delete it.</p></div>
-    <div class="card"><h3><a class="link" href="./terms.html">Terms of Service</a></h3><p>Your licence to use the app, acceptable use, and the disclaimer that applies to religious content and calculated prayer times.</p></div>
-    <div class="card"><h3><a class="link" href="./delete-account.html">Delete your account</a></h3><p>Step-by-step deletion inside the app, an email route if you have already uninstalled it, and a full list of what is erased.</p></div>
-    <div class="card"><h3><a class="link" href="./support.html">Support &amp; FAQ</a></h3><p>The prayer-time method, notification troubleshooting, data export, and how to report an error in a religious text.</p></div>
-  </div>
-
-  <h2>Contact</h2>
-  <p>Email <a class="link" href="mailto:shortfiqh@gmail.com">shortfiqh@gmail.com</a> for support, for privacy and deletion requests, or to report a correction to any religious text in the app.</p>
 </main>
 
 <footer class="site">
-  <div class="wrap">
-    <nav aria-label="Footer"><a href="./index.html">Home</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
-    <p class="fine">&copy; Eisaal Foundation. Eisaal is an independent project and is not affiliated with Apple Inc. or Google LLC.</p>
+  <div class="wrap wrap-wide">
+    <nav aria-label="Footer"><a href="./index.html">Home</a><a href="./download.html">Download</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a><a href="./delete-account.html">Delete Account</a><a href="./support.html">Support</a></nav>
+    <p class="fine">&copy; Eisaal Foundation. Eisaal is an independent project and is not affiliated with Apple Inc. or Google LLC. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
   </div>
 </footer>
+
+<div class="get-bar" id="get-bar">
+  <img src="./assets/app-icon.png" alt="" width="40" height="40">
+  <div class="get-bar-text"><strong>Eisaal</strong><span id="get-bar-sub">Free for iPhone, iPad and Android</span></div>
+  <a class="get-bar-btn" id="get-bar-btn" href="./download.html">Download</a>
+</div>
+
+<script>
+  (function () {
+    var platform = document.documentElement.getAttribute('data-platform');
+    var stores = {
+      ios: { url: 'https://apps.apple.com/app/id6746689559', label: 'Free on the App Store' },
+      android: { url: 'https://play.google.com/store/apps/details?id=com.eisaal.com', label: 'Free on Google Play' }
+    };
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // This device's store goes first in every badge row.
+    if (stores[platform]) {
+      document.querySelectorAll('.store-badges').forEach(function (row) {
+        var match = row.querySelector('[data-store="' + platform + '"]');
+        if (match) row.insertBefore(match, row.firstChild);
+      });
+      document.getElementById('get-bar-btn').href = stores[platform].url;
+      document.getElementById('get-bar-sub').textContent = stores[platform].label;
+    }
+
+    // Palette switch: the phone screen and the hero's own light change together.
+    var hero = document.querySelector('.promo-hero');
+    var screens = document.querySelectorAll('#palette-phone img');
+    var buttons = document.querySelectorAll('.light-switch button');
+    var caption = document.getElementById('light-caption');
+    var captions = {
+      everyday: 'Everyday light, for ordinary days. The app follows the Hijri calendar and changes its light with it.',
+      night: 'Everyday dark, for the night and for reading after Maghribain.',
+      joy: 'Joy, a celebration palette for the days of happiness in the calendar.',
+      mourning: 'Mourning, for Muharram and Safar. The gold is gone; crimson is the only light.'
+    };
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var light = button.getAttribute('data-light');
+        hero.setAttribute('data-light', light);
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === button)); });
+        screens.forEach(function (img) { img.classList.toggle('is-on', img.getAttribute('data-light') === light); });
+        caption.textContent = captions[light];
+      });
+    });
+
+    // Screen tour: arrow buttons page the track; native scroll-snap does the rest.
+    var track = document.getElementById('tour-track');
+    var prev = document.querySelector('.tour-btn[data-dir="-1"]');
+    var next = document.querySelector('.tour-btn[data-dir="1"]');
+    function syncButtons() {
+      prev.disabled = track.scrollLeft < 8;
+      next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+    }
+    [prev, next].forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var step = track.querySelector('.tour-slide').getBoundingClientRect().width;
+        var perPage = Math.max(1, Math.floor(track.clientWidth / step));
+        track.scrollBy({ left: Number(btn.getAttribute('data-dir')) * step * perPage, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', syncButtons, { passive: true });
+    window.addEventListener('resize', syncButtons);
+    syncButtons();
+
+    // Phone bar: shown once the hero's badges scroll away, hidden again at the closing badges.
+    var bar = document.getElementById('get-bar');
+    if (!('IntersectionObserver' in window)) return;
+    var visible = { hero: true, closing: false };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible[entry.target.id === 'hero-cta' ? 'hero' : 'closing'] = entry.isIntersecting;
+      });
+      bar.classList.toggle('is-shown', !visible.hero && !visible.closing);
+    });
+    io.observe(document.getElementById('hero-cta'));
+    io.observe(document.getElementById('closing-cta'));
+  })();
+</script>
 
 </body>
 </html>

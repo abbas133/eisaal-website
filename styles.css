@@ -52,6 +52,21 @@
   --f-title: "Playfair Display", Georgia, "Times New Roman", serif;
   --f-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --f-arabic: "Noto Naskh Arabic", "Scheherazade New", serif;
+
+  /* Home hero lights — the four Rawdah cells (lib/modules/theme/presentation/colors/rawdah_palettes.dart) */
+  --everyday-bg: #FAF6ED; --everyday-bg2: #F1EADB; --everyday-ink: #2A2418; --everyday-ink2: #6E6656;
+  --everyday-light: #C49A2A; --everyday-glow: rgba(196, 154, 42, 0.30);
+  --night-bg: #211B14; --night-bg2: #0A0704; --night-ink: #F3ECDF; --night-ink2: #B3A794;
+  --night-light: #D9B45C; --night-glow: rgba(217, 180, 92, 0.30);
+  --joy-bg: #EEF5EF; --joy-bg2: #E3EEE5; --joy-ink: #0F1F16; --joy-ink2: #4F6A58;
+  --joy-light: #157A4A; --joy-glow: rgba(21, 122, 74, 0.24);
+  --mourning-bg: #1B1115; --mourning-bg2: #0A0608; --mourning-ink: #ECDFE0; --mourning-ink2: #9E8F93;
+  --mourning-light: #C8283C; --mourning-glow: rgba(200, 40, 60, 0.30);
+  --bezel: #1A1510;              /* everyday-dark marble: the phone frame */
+  --shadow-phone: 0 24px 48px rgba(60, 48, 20, 0.22), 0 6px 14px rgba(60, 48, 20, 0.12);
+  --motion-light: 600ms cubic-bezier(.33,1,.68,1);   /* the app's 600 ms occasion shift */
+  --on-light: #1A1405;           /* onLight: text on a gold button */
+  --r-hero: 24px;
 }
 
 /* ---------- Base ---------------------------------------------------------- */
@@ -245,19 +260,17 @@ details[open] summary::before { content: "\2212"; border-color: var(--primary); 
 details .body { padding: 0 0 var(--s-lg) 34px; }
 details .body p:first-child { margin-top: 0; }
 
-/* Store badges */
-.badges { display: flex; flex-wrap: wrap; gap: var(--s-md); margin: var(--s-xxl) 0 var(--s-sm); }
-.badge {
-  display: flex; align-items: center; gap: var(--s-md); min-width: 220px;
-  background: var(--elevated); border-radius: var(--r-md);
-  box-shadow: var(--shadow-standard), var(--edge-raised);
-  padding: var(--s-md) var(--s-lg); color: var(--on-surface); text-decoration: none; font-size: 14px;
-  transition: transform 150ms cubic-bezier(.33,1,.68,1), box-shadow 150ms;
+/* Download page — the detected device's store is lit; the QR card is for desktops only */
+.hero .download-badges { margin-top: var(--s-xxl); }
+.qr-card { display: flex; gap: var(--s-xxl); align-items: center; }
+.qr-card h3 { margin: 0 0 var(--s-xs); }
+.qr-card p { color: var(--secondary); font-size: 14.5px; }
+.qr {
+  flex: 0 0 auto; width: 132px; height: 132px; padding: var(--s-md);
+  background: var(--floating); border-radius: var(--r-md);
+  box-shadow: var(--shadow-standard), 0 0 0 1px var(--hairline);
 }
-.badge:hover { transform: scale(0.98); box-shadow: var(--shadow-elevated), var(--edge-elevated); }
-.badge strong { display: block; font-size: 15px; }
-.badge em { font-style: normal; color: var(--secondary); font-size: 12.5px; }
-.badge svg { width: 22px; height: 22px; color: var(--icon-neutral); flex: 0 0 auto; }
+[data-platform="ios"] .qr-card, [data-platform="android"] .qr-card { display: none; }
 
 /* Placeholder marker — intentionally loud until filled */
 .ph {
@@ -299,6 +312,211 @@ details .body p:first-child { margin-top: 0; }
 .feature h3 { margin: 0 0 2px; font-size: 15.5px; }
 .feature p { margin: 0; color: var(--secondary); font-size: 14.5px; }
 
+/* ---------- Home — promotional landing ------------------------------------ */
+.wrap-wide { max-width: 1120px; }
+body.home main { padding-bottom: var(--s-sm); }
+
+/* Gold primary button (the app's SanctuaryButton): header pill and the phone bar */
+.nav-cta, .get-bar-btn {
+  background: var(--primary); color: var(--on-light); text-decoration: none; white-space: nowrap;
+  font-weight: 600; border-radius: var(--r-full);
+  box-shadow: 0 0 0 3px var(--gold-subtle), var(--shadow-standard);
+  transition: transform 150ms cubic-bezier(.33,1,.68,1);
+}
+.nav-cta { font-size: 13.5px; padding: 7px 16px; }
+.nav-cta:hover, .get-bar-btn:hover { transform: scale(0.98); }
+
+/* Official store badges — artwork untouched, heights matched */
+.store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-md); }
+.store-badge { display: block; line-height: 0; border-radius: var(--r-sm); transition: transform 150ms cubic-bezier(.33,1,.68,1); }
+.store-badge:hover { transform: translateY(-1px); }
+.store-badge img { display: block; height: 52px; width: auto; }
+a:focus-visible, button:focus-visible, .tour-track:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+/* Hero: the one Tier-1 surface. Its light follows the palette switch, like the app's occasions. */
+@property --hero-bg { syntax: "<color>"; inherits: true; initial-value: #FAF6ED; }
+@property --hero-bg2 { syntax: "<color>"; inherits: true; initial-value: #F1EADB; }
+@property --hero-glow { syntax: "<color>"; inherits: true; initial-value: rgba(196, 154, 42, 0.30); }
+.promo-hero {
+  --hero-bg: var(--everyday-bg); --hero-bg2: var(--everyday-bg2); --hero-glow: var(--everyday-glow);
+  --hero-ink: var(--everyday-ink); --hero-ink2: var(--everyday-ink2); --hero-light: var(--everyday-light);
+  position: relative; overflow: hidden; overflow: clip; isolation: isolate;
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center;
+  gap: var(--s-xxxxl); margin: var(--s-xxxl) 0 var(--s-hero);
+  padding: var(--s-hero) var(--s-hero) var(--s-xxxxl) calc(var(--s-hero) + var(--s-lg));
+  border-radius: var(--r-hero);
+  background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg2) 100%);
+  color: var(--hero-ink);
+  box-shadow: var(--shadow-elevated), var(--edge-elevated);
+  transition: --hero-bg var(--motion-light), --hero-bg2 var(--motion-light), --hero-glow var(--motion-light), color var(--motion-light);
+}
+.promo-hero[data-light="night"] {
+  --hero-bg: var(--night-bg); --hero-bg2: var(--night-bg2); --hero-glow: var(--night-glow);
+  --hero-ink: var(--night-ink); --hero-ink2: var(--night-ink2); --hero-light: var(--night-light);
+}
+.promo-hero[data-light="joy"] {
+  --hero-bg: var(--joy-bg); --hero-bg2: var(--joy-bg2); --hero-glow: var(--joy-glow);
+  --hero-ink: var(--joy-ink); --hero-ink2: var(--joy-ink2); --hero-light: var(--joy-light);
+}
+.promo-hero[data-light="mourning"] {
+  --hero-bg: var(--mourning-bg); --hero-bg2: var(--mourning-bg2); --hero-glow: var(--mourning-glow);
+  --hero-ink: var(--mourning-ink); --hero-ink2: var(--mourning-ink2); --hero-light: var(--mourning-light);
+}
+.promo-hero h1 {
+  font-size: clamp(32px, 4.4vw, 52px); line-height: 1.12; letter-spacing: 0;
+  margin: 0; max-width: 13em; text-wrap: balance; color: var(--hero-ink);
+  transition: color var(--motion-light);
+}
+.promo-lede {
+  font-size: 18.5px; line-height: 1.6; max-width: 31em; margin: var(--s-xl) 0 var(--s-xxxl);
+  color: var(--hero-ink2); transition: color var(--motion-light);
+}
+.promo-fine { font-size: 13px; line-height: 1.5; color: var(--hero-ink2); margin: var(--s-lg) 0 0; max-width: 28em; transition: color var(--motion-light); }
+
+.promo-stage { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; }
+/* The glow is painted inside the hero's own box: an overflowing layer would make it scrollable on focus */
+.promo-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at var(--glow-at, 74% 42%), var(--hero-glow), transparent 42%);
+}
+.promo-stage .phone { width: min(290px, 100%); }
+.promo-stage figcaption { text-align: center; margin-top: var(--s-xxxl); }
+
+/* Phone frame around a 1320×2868 store screenshot; the island sits where iOS draws it */
+.phone {
+  position: relative; aspect-ratio: 1320 / 2868; border-radius: 13% / 6%; overflow: hidden;
+  background: var(--bezel);
+  box-shadow: 0 0 0 7px var(--bezel), 0 0 0 8px var(--thread), var(--shadow-phone);
+}
+.phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.phone::after {
+  content: ""; position: absolute; left: 50%; top: 1.45%; width: 28.6%; height: 3.85%;
+  transform: translateX(-50%); border-radius: var(--r-full); background: var(--bezel);
+}
+#palette-phone img { opacity: 0; transition: opacity var(--motion-light); }
+#palette-phone img.is-on { opacity: 1; }
+
+.light-switch {
+  display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 2px; padding: 3px;
+  border-radius: var(--r-full); background: color-mix(in srgb, var(--hero-ink) 7%, transparent);
+}
+.light-switch button {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: 500 13px/1 var(--f-body); color: var(--hero-ink2);
+  background: transparent; border: 0; border-radius: var(--r-full); padding: 8px 13px; cursor: pointer;
+  transition: background 150ms cubic-bezier(.33,1,.68,1), color 150ms cubic-bezier(.33,1,.68,1);
+}
+.light-switch button::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--everyday-light); }
+.light-switch button[data-light="night"]::before { background: var(--night-bg2); box-shadow: 0 0 0 1px var(--night-light); }
+.light-switch button[data-light="joy"]::before { background: var(--joy-light); }
+.light-switch button[data-light="mourning"]::before { background: var(--mourning-light); }
+.light-switch button[aria-pressed="true"] {
+  color: var(--hero-ink);
+  background: color-mix(in srgb, var(--hero-bg) 70%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--hero-light) 55%, transparent), var(--shadow-standard);
+}
+.light-caption {
+  font-size: 14px; line-height: 1.5; color: var(--hero-ink2); max-width: 24em; min-height: 3em;
+  margin: var(--s-md) auto 0; transition: color var(--motion-light);
+}
+
+/* Screen tour — native scroll-snap, full-bleed track aligned to the wide column */
+.tour { margin: 0 0 var(--s-xxxl); --tour-inset: max(var(--s-xl), calc((100% - 1120px) / 2 + var(--s-xl))); }
+.tour-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-lg); }
+.tour-head h2 { margin: 0; padding: 0; font-size: 28px; }
+.tour-nav { display: flex; gap: var(--s-sm); }
+.tour-btn {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  border: 1px solid var(--thread); background: var(--elevated); color: var(--on-surface);
+  box-shadow: var(--shadow-standard);
+}
+.tour-btn:disabled { opacity: 0.4; cursor: default; }
+.tour-btn svg { width: 20px; height: 20px; }
+.tour-track {
+  list-style: none; margin: var(--s-md) 0 0; display: flex; gap: var(--s-xxxl);
+  padding: var(--s-xxl) var(--tour-inset) var(--s-xxl); scroll-padding-inline: var(--tour-inset);
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.tour-track::-webkit-scrollbar { display: none; }
+.tour-slide { flex: 0 0 216px; margin: 0; scroll-snap-align: start; }
+.tour-slide .phone { box-shadow: 0 0 0 6px var(--bezel), 0 0 0 7px var(--thread), 0 14px 28px rgba(60, 48, 20, 0.16); }
+.tour-slide h3 { margin: var(--s-xxl) 0 var(--s-xs); font-size: 16px; }
+.tour-slide p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--secondary); }
+
+/* Principles — quiet, no cards: a hairline above each */
+.principles h2 { font-size: 28px; }
+.principle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--s-xxl) var(--s-xxxl); margin: var(--s-xl) 0 0; }
+.principle { border-top: 1px solid var(--thread); padding-top: var(--s-lg); }
+.principle .icon { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--icon-container); color: var(--icon-neutral); }
+.principle .icon svg { width: 20px; height: 20px; }
+.principle h3 { margin: var(--s-md) 0 var(--s-xs); font-size: 16px; }
+.principle p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--secondary); }
+
+/* Closing call — a lantern in the night palette */
+.closing {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--s-xxxl);
+  margin: var(--s-hero) 0; padding: var(--s-xxxxl) var(--s-hero);
+  border-radius: var(--r-hero); color: var(--night-ink);
+  background: radial-gradient(120% 140% at 0% 0%, var(--night-bg) 0%, var(--night-bg2) 100%);
+  box-shadow: var(--shadow-floating), inset 1px 1px 0 rgba(217, 180, 92, 0.25);
+}
+.closing-icon { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 0 0 1px rgba(217, 180, 92, 0.35), 0 10px 32px var(--night-glow); }
+.closing h2 { margin: 0 0 var(--s-xs); padding: 0; font-size: 30px; color: var(--night-ink); }
+.closing-copy > p { margin: 0 0 var(--s-xl); color: var(--night-ink2); }
+.closing-qr { text-align: center; }
+.closing-qr p { margin: var(--s-sm) auto 0; max-width: 11em; font-size: 12.5px; line-height: 1.45; color: var(--night-ink2); }
+.closing .qr { width: 120px; height: 120px; }
+[data-platform="ios"] .closing-qr, [data-platform="android"] .closing-qr { display: none; }
+
+/* Phone bar — appears once the hero badges scroll away (small screens only) */
+.get-bar { display: none; }
+
+@media (max-width: 880px) {
+  .promo-hero { --glow-at: 50% 68%; grid-template-columns: minmax(0, 1fr); padding: var(--s-xxxxl) var(--s-xxxl); gap: var(--s-xxxxl); }
+  .promo-stage figcaption { margin-top: var(--s-xxl); }
+  .closing { grid-template-columns: auto minmax(0, 1fr); }
+  .closing-qr { display: none; }
+}
+@media (max-width: 720px) {
+  .get-bar {
+    display: flex; align-items: center; gap: var(--s-md);
+    position: fixed; z-index: 20; left: var(--s-md); right: var(--s-md);
+    bottom: calc(var(--s-md) + env(safe-area-inset-bottom, 0px));
+    padding: 10px 10px 10px 12px; border-radius: 18px;
+    background: var(--floating); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-floating), var(--edge-elevated);
+    transform: translateY(calc(100% + 32px)); visibility: hidden;
+    transition: transform 340ms cubic-bezier(.33,1,.68,1), visibility 0s linear 340ms;
+  }
+  .get-bar.is-shown { transform: none; visibility: visible; transition: transform 340ms cubic-bezier(.33,1,.68,1), visibility 0s; }
+  .get-bar img { width: 40px; height: 40px; border-radius: 10px; flex: 0 0 auto; }
+  .get-bar-text { flex: 1; min-width: 0; line-height: 1.3; }
+  .get-bar-text strong { display: block; font-size: 15px; }
+  .get-bar-text span { display: block; font-size: 12.5px; color: var(--secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .get-bar-btn { font-size: 15px; padding: 11px 20px; }
+  body.home footer.site { padding-bottom: 112px; }
+}
+@media (max-width: 560px) {
+  body.home nav.primary { display: none; }
+  body.home .wrap { padding: 0 var(--s-lg); }
+  .promo-hero { margin-top: var(--s-lg); padding: var(--s-xxxl) var(--s-xl) var(--s-xxl); gap: var(--s-xxxl); }
+  .promo-lede { font-size: 17px; margin: var(--s-lg) 0 var(--s-xxl); }
+  .store-badge img { height: 44px; }
+  .promo-stage .phone { width: min(250px, 76%); }
+  .light-switch { flex-wrap: nowrap; }
+  .light-switch button { padding: 8px 11px; }
+  .light-switch button::before { display: none; }
+  .tour { --tour-inset: var(--s-lg); }
+  .tour-nav { display: none; }
+  .tour-head h2, .principles h2 { font-size: 24px; }
+  .tour-track { gap: var(--s-xxl); }
+  .tour-slide { flex-basis: min(200px, 58vw); }
+  .closing { grid-template-columns: minmax(0, 1fr); gap: var(--s-xl); padding: var(--s-xxxl) var(--s-xl); }
+  .closing-icon { width: 60px; height: 60px; border-radius: 15px; }
+  .closing h2 { font-size: 26px; }
+}
+
 /* ---------- Footer --------------------------------------------------------- */
 footer.site {
   border-top: 1px solid var(--hairline); margin-top: var(--s-hero); padding: var(--s-xxl) 0 var(--s-hero);
@@ -318,6 +536,7 @@ footer.site a:hover { color: var(--primary-text); }
   .hero .watermark { width: 110px; height: 110px; }
   .bar { padding: 10px 0; }
   nav.primary a { font-size: 13px; padding: 5px 10px; }
+  .qr-card { flex-direction: column; align-items: flex-start; gap: var(--s-lg); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
