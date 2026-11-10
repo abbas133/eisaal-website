@@ -24,7 +24,7 @@
 <main class="wrap">
   <h1>Privacy Policy</h1>
   <p class="meta">Applies to the Eisaal mobile app for iOS and Android.</p>
-  <p class="meta">Effective date: 21 September 2026 &nbsp;·&nbsp; Policy version: 1.1.0 (this is the version number the app records when you accept it)</p>
+  <p class="meta">Effective date: 10 November 2026 &nbsp;·&nbsp; Policy version: 1.2.0 (this is the version number the app records when you accept it)</p>
   <hr class="rule">
 
   <p>Eisaal Foundation (&ldquo;we&rdquo;, &ldquo;us&rdquo;) publishes the Eisaal app. This policy explains what the app collects, why, who else receives it, how long it is kept, and how you can export or delete it. Each item below describes something the app actually does; nothing here is included as a precaution against features we do not have.</p>
@@ -35,6 +35,7 @@
     <p><strong>We do not sell your data.</strong> We use no advertising identifiers, show no ads, and do not track you across other apps or websites.</p>
     <p><strong>Your location is not stored on our servers.</strong> It is used on your device to calculate prayer times and the qibla direction. It is sent to a mapping service only at the moment you ask the app to find your city — see &sect;2.</p>
     <p><strong>The sajda (Mohr-e-Ameen) feature does not keep or send any image.</strong> On iPhone it reads the camera only as a light meter; each frame is reduced to a single brightness value and discarded.</p>
+    <p><strong>Sadqa is paid on Razorpay&rsquo;s page, not in the app.</strong> Your card, UPI or bank details go to Razorpay, our payment processor; we never see them. For a weekly or monthly Sadqa we keep a short record of the subscription so that you can see and stop it — see &sect;1.6.</p>
     <p><strong>You can delete everything</strong> from inside the app, or by <a class="link" href="./delete-account.html">requesting deletion here</a>.</p>
   </div>
 
@@ -58,7 +59,7 @@
 
   <h3>1.1 Account and profile data (collected only if you create an account)</h3>
   <p>Creating an account is optional. It exists so that your favourites, collections and qaza records follow you to a new device. This data is stored in our backend database (Supabase) and is <strong>linked to your identity</strong>.</p>
-  <p><strong>Guest use.</strong> If you tap &ldquo;Continue as Guest&rdquo;, the app creates an <em>anonymous</em> session on our backend. That record is an account identifier and nothing else: no email address, no name, no profile fields. It exists so that the app has a session to work with, and it is deleted along with everything else if you delete your account. <strong>Nothing you record while you are a guest is synced to our servers</strong> — favourites, qaza records and the rest stay on your device until you create a full account.</p>
+  <p><strong>Guest use.</strong> If you tap &ldquo;Continue as Guest&rdquo;, the app creates an <em>anonymous</em> session on our backend. That record is an account identifier and nothing else: no email address, no name, no profile fields. It exists so that the app has a session to work with. You delete it in the app the same way as an account (&sect;9); because it carries no email address, it cannot be deleted by emailing us. <strong>Nothing you record while you are a guest is synced to our servers</strong> — favourites, qaza records and the rest stay on your device until you create a full account. The one exception is a weekly or monthly Sadqa you start as a guest: its subscription record (&sect;1.6) is kept on our backend so that you can see and stop it.</p>
   <div class="tablewrap">
     <table>
       <tr><th>Data</th><th>Where it comes from</th><th>Why</th></tr>
@@ -92,6 +93,7 @@
     <li>Mohr-e-Ameen (sajda) sessions</li>
     <li>Khums calculations</li>
     <li>Aamaal completions</li>
+    <li>Your Sadqa reminder, and the days you mark as given</li>
     <li>Prayer notification settings and manual prayer-time adjustments</li>
     <li>Cached prayer times, and your last known approximate coordinates (see &sect;2)</li>
     <li>Interface preferences: theme, fonts, language, translation and transliteration toggles, haptics</li>
@@ -115,6 +117,26 @@
 
   <h3>1.5 Bot protection</h3>
   <p>Where bot protection is enabled on our sign-in flow, an hCaptcha challenge is loaded from hCaptcha&rsquo;s servers in a web view during sign-in or sign-up. hCaptcha receives your IP address and interaction signals in order to decide whether you are a person rather than an automated script. We do not receive those signals ourselves.</p>
+
+  <h3 id="sadqa">1.6 Sadqa donations (Razorpay)</h3>
+  <p>The Sadqa page lets you give through <strong>Razorpay</strong>, a payment processor in India. The app has no payment form of its own: you enter your payment details, and any name, email or phone number Razorpay asks for, on Razorpay&rsquo;s own page. Razorpay processes them under its own privacy policy. As the recipient of the donation, Eisaal Foundation can see the payment in its Razorpay account, with the details you gave Razorpay.</p>
+  <ul>
+    <li><strong>A one-time gift</strong> opens a Razorpay payment page in your browser. The app passes only the amount you chose.</li>
+    <li><strong>A weekly or monthly Sadqa</strong> is a Razorpay subscription. Our server asks Razorpay to create it and sends only the amount, the frequency, the number of payments, the deadline for approving it, and a note that it came from the app. We send no name, email, phone number, account identifier or payment detail. You approve the subscription on Razorpay&rsquo;s page, and Razorpay takes each payment until the subscription ends or you stop it.</li>
+    <li>Your Sadqa reminder and the days you mark as given stay on your device (&sect;1.3).</li>
+  </ul>
+  <p>For each weekly or monthly Sadqa we keep this record in our backend (Supabase):</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Data</th><th>Why</th></tr>
+      <tr><td>Razorpay subscription ID, and whether it was made in Razorpay&rsquo;s test or live mode</td><td>To ask Razorpay for its status and to stop it</td></tr>
+      <tr><td>Frequency (weekly or monthly) and amount</td><td>To show you what you give</td></tr>
+      <tr><td>Your account identifier, or your guest identifier if you were not signed in</td><td>To show the subscription on every device you sign in on</td></tr>
+      <tr><td>A fingerprint (SHA-256 hash) of a random token that only your phone holds</td><td>To prove the subscription was started on your phone, so that you can see and stop it there even as a guest</td></tr>
+      <tr><td>Status as Razorpay reports it, next charge date, number of payments made, end date, and when the record was created and last updated</td><td>To show you where the subscription stands</td></tr>
+    </table>
+  </div>
+  <p>We also keep this record as a record of the donation, for donation receipts (such as 80G receipts). <strong>When you delete your account, any subscription still running is cancelled first</strong>, so Razorpay takes no more payments; the record is then kept without the link to your account (&sect;8).</p>
 
   <h2 id="location">2. Location</h2>
   <ul>
@@ -146,6 +168,8 @@
       <tr><td>Providing the app&rsquo;s core features</td><td>On-device data, location if granted</td><td>Performance of a contract with you / legitimate interests</td></tr>
       <tr><td>Creating your account and syncing your records across devices</td><td>&sect;1.1, &sect;1.2</td><td>Performance of a contract with you</td></tr>
       <tr><td>Showing rulings and khums guidance for your marja</td><td>Marja followed</td><td><strong>Your explicit consent</strong> — this reveals religious belief, a special category of data under Article 9. It is optional; you may leave it blank or clear it at any time in the app.</td></tr>
+      <tr><td>Processing your Sadqa, and letting you see and stop your subscriptions</td><td>&sect;1.6</td><td>Performance of a contract with you</td></tr>
+      <tr><td>Keeping the record of a donation after you delete your account</td><td>&sect;1.6, without the account link</td><td>Legal obligation (donation and tax records)</td></tr>
       <tr><td>Recording that you accepted this policy</td><td>Policy version + timestamp</td><td>Legal obligation / legitimate interests</td></tr>
       <tr><td>Keeping the app stable and finding crashes</td><td>&sect;1.4</td><td>Legitimate interests in a working, secure app</td></tr>
       <tr><td>Preventing automated abuse of sign-in</td><td>hCaptcha signals, IP</td><td>Legitimate interests in security</td></tr>
@@ -158,7 +182,8 @@
   <div class="tablewrap">
     <table>
       <tr><th>Provider</th><th>Role</th><th>What they receive</th></tr>
-      <tr><td>Supabase</td><td>Backend database and authentication</td><td>Everything in &sect;1.1 and &sect;1.2, plus connection metadata such as IP address</td></tr>
+      <tr><td>Supabase</td><td>Backend database and authentication</td><td>Everything in &sect;1.1 and &sect;1.2, the Sadqa subscription records in &sect;1.6, plus connection metadata such as IP address</td></tr>
+      <tr><td>Razorpay</td><td>Payment processing for Sadqa</td><td>From us: the amount and frequency of a subscription, the number of payments, the approval deadline and a note that it came from the app. From you, on Razorpay&rsquo;s page: your payment details and any contact details it asks for</td></tr>
       <tr><td>Google (Firebase Crashlytics)</td><td>Crash reporting</td><td>&sect;1.4 crash data, linked to your account identifier</td></tr>
       <tr><td>Google (Firebase Analytics)</td><td>Product analytics</td><td>&sect;1.4 usage events, linked to your account identifier</td></tr>
       <tr><td>Google (Firebase Performance Monitoring)</td><td>App performance monitoring</td><td>&sect;1.4 performance measurements, linked to your account identifier</td></tr>
@@ -169,16 +194,17 @@
       <tr><td>Apple / Google app stores</td><td>App distribution and, where you use it, ratings</td><td>Whatever the store collects under its own policy; we receive only aggregate store reports</td></tr>
     </table>
   </div>
-  <p>These providers process data on our instructions, with the exception of the sign-in providers and the app stores, which act as independent controllers for their own purposes. We may also disclose data where the law requires it, or where it is necessary to protect the rights and safety of our users. We have no other routine disclosures, and we do not disclose data to advertisers or data brokers.</p>
+  <p>These providers process data on our instructions, with the exception of the sign-in providers, the app stores, and Razorpay for the payment details you give it, which act as independent controllers for their own purposes. We may also disclose data where the law requires it, or where it is necessary to protect the rights and safety of our users. We have no other routine disclosures, and we do not disclose data to advertisers or data brokers.</p>
 
   <h2 id="transfers">7. International transfers</h2>
-  <p>Our backend is hosted in Mumbai, India (AWS ap-south-1). Firebase and the sign-in providers process data in the United States and other countries. Where data leaves the UK or European Economic Area, transfers rely on the providers&rsquo; Standard Contractual Clauses and equivalent safeguards. If you are in the UK or EEA and want a copy of the relevant safeguards, email us.</p>
+  <p>Our backend is hosted in Mumbai, India (AWS ap-south-1), and Razorpay processes payments in India. Firebase and the sign-in providers process data in the United States and other countries. Where data leaves the UK or European Economic Area, transfers rely on the providers&rsquo; Standard Contractual Clauses and equivalent safeguards. If you are in the UK or EEA and want a copy of the relevant safeguards, email us.</p>
 
   <h2 id="retention">8. How long we keep data</h2>
   <div class="tablewrap">
     <table>
       <tr><th>Data</th><th>Retention</th></tr>
       <tr><td>Account, profile and synced records (&sect;1.1, &sect;1.2)</td><td>Kept while your account exists. Erased when you delete your account.</td></tr>
+      <tr><td>Sadqa subscription records (&sect;1.6)</td><td>Kept while your account exists. When you delete your account, any subscription still running is cancelled first, and the record is kept without the link to your account for 8 years, for donation and tax (80G) receipts, and is then deleted. The same applies when you delete a guest record.</td></tr>
       <tr><td>Backups of our database</td><td>We do not keep automated database backups, so no residual copy of your data survives deletion. Erasure is immediate and final.</td></tr>
       <tr><td>On-device data (&sect;1.3)</td><td>Until you delete it in the app or uninstall the app. We never hold a copy.</td></tr>
       <tr><td>Crash reports</td><td>Retained by Firebase Crashlytics for up to 90 days, per Google&rsquo;s standard retention for that product.</td></tr>
@@ -193,13 +219,15 @@
 
   <div class="card">
     <h3>Export your data — in the app</h3>
-    <p>Open Eisaal &rarr; tap the <strong>settings</strong> icon in the top bar &rarr; <strong>Legal</strong> &rarr; <strong>Data &amp; Privacy</strong> &rarr; <strong>Export My Data</strong>.</p>
+    <p>Open Eisaal &rarr; tap the <strong>settings</strong> icon in the top bar &rarr; <strong>Privacy</strong> &rarr; <strong>Export my data</strong>.</p>
     <p>The app assembles a single JSON file on your device and hands it to your phone&rsquo;s share sheet, so you can save it, email it to yourself, or send it wherever you like. The export includes your profile, settings and preferences, favourites and collections, bookmarks, qaza profiles, your aamaal and aamaal completions, your Hijri events, prayer notification settings, tasbeeh sessions, mohr sessions and khums calculations.</p>
   </div>
 
   <div class="card">
     <h3>Delete your account and data</h3>
-    <p>In the app: <strong>settings</strong> icon &rarr; scroll to <strong>Danger Zone</strong> &rarr; <strong>Delete Account</strong> &rarr; confirm.</p>
+    <p>In the app: <strong>settings</strong> icon &rarr; scroll to the bottom &rarr; <strong>Delete account</strong> &rarr; confirm.</p>
+    <p>Deleting your account first cancels any Sadqa subscription that is still running. If one cannot be cancelled (for example, when you are offline), the account is not deleted and the app tells you, so that nothing is charged after your account is gone.</p>
+    <p>As a guest you delete in the app in the same way, while you are still in your guest session: any Sadqa subscription started on this phone without an account is cancelled first, then the guest record and what the app saved on your phone are erased. A guest record carries no email address, so we cannot match an emailed request to it.</p>
     <p>If you have already uninstalled the app, or you would rather email us, follow the instructions on the <a class="link" href="./delete-account.html">Delete Account page</a>.</p>
   </div>
 
