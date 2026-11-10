@@ -59,7 +59,7 @@
 
   <h3>1.1 Account and profile data (collected only if you create an account)</h3>
   <p>Creating an account is optional. It exists so that your favourites, collections and qaza records follow you to a new device. This data is stored in our backend database (Supabase) and is <strong>linked to your identity</strong>.</p>
-  <p><strong>Guest use.</strong> If you tap &ldquo;Continue as Guest&rdquo;, the app creates an <em>anonymous</em> session on our backend. That record is an account identifier and nothing else: no email address, no name, no profile fields. It exists so that the app has a session to work with, and it is deleted along with everything else if you delete your account. <strong>Nothing you record while you are a guest is synced to our servers</strong> — favourites, qaza records and the rest stay on your device until you create a full account. The one exception is a weekly or monthly Sadqa you start as a guest: its subscription record (&sect;1.6) is kept on our backend so that you can see and stop it.</p>
+  <p><strong>Guest use.</strong> If you tap &ldquo;Continue as Guest&rdquo;, the app creates an <em>anonymous</em> session on our backend. That record is an account identifier and nothing else: no email address, no name, no profile fields. It exists so that the app has a session to work with. You delete it in the app the same way as an account (&sect;9); because it carries no email address, it cannot be deleted by emailing us. <strong>Nothing you record while you are a guest is synced to our servers</strong> — favourites, qaza records and the rest stay on your device until you create a full account. The one exception is a weekly or monthly Sadqa you start as a guest: its subscription record (&sect;1.6) is kept on our backend so that you can see and stop it.</p>
   <div class="tablewrap">
     <table>
       <tr><th>Data</th><th>Where it comes from</th><th>Why</th></tr>
@@ -204,7 +204,7 @@
     <table>
       <tr><th>Data</th><th>Retention</th></tr>
       <tr><td>Account, profile and synced records (&sect;1.1, &sect;1.2)</td><td>Kept while your account exists. Erased when you delete your account.</td></tr>
-      <tr><td>Sadqa subscription records (&sect;1.6)</td><td>Kept while your account exists. When you delete your account, any subscription still running is cancelled first, and the record is kept without the link to your account for 8 years, for donation and tax (80G) receipts, and is then deleted. A guest&rsquo;s record is kept in the same way.</td></tr>
+      <tr><td>Sadqa subscription records (&sect;1.6)</td><td>Kept while your account exists. When you delete your account, any subscription still running is cancelled first, and the record is kept without the link to your account for 8 years, for donation and tax (80G) receipts, and is then deleted. The same applies when you delete a guest record.</td></tr>
       <tr><td>Backups of our database</td><td>We do not keep automated database backups, so no residual copy of your data survives deletion. Erasure is immediate and final.</td></tr>
       <tr><td>On-device data (&sect;1.3)</td><td>Until you delete it in the app or uninstall the app. We never hold a copy.</td></tr>
       <tr><td>Crash reports</td><td>Retained by Firebase Crashlytics for up to 90 days, per Google&rsquo;s standard retention for that product.</td></tr>
@@ -227,6 +227,7 @@
     <h3>Delete your account and data</h3>
     <p>In the app: <strong>settings</strong> icon &rarr; scroll to the bottom &rarr; <strong>Delete account</strong> &rarr; confirm.</p>
     <p>Deleting your account first cancels any Sadqa subscription that is still running. If one cannot be cancelled (for example, when you are offline), the account is not deleted and the app tells you, so that nothing is charged after your account is gone.</p>
+    <p>As a guest you delete in the app in the same way, while you are still in your guest session: any Sadqa subscription started on this phone without an account is cancelled first, then the guest record and what the app saved on your phone are erased. A guest record carries no email address, so we cannot match an emailed request to it.</p>
     <p>If you have already uninstalled the app, or you would rather email us, follow the instructions on the <a class="link" href="./delete-account.html">Delete Account page</a>.</p>
   </div>
 
