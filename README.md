@@ -15,12 +15,13 @@ support. Static HTML, published with GitHub Pages at `https://eisaal.com` (see `
 | `support.html` | Contact + FAQ |
 | `404.html` | GitHub Pages not-found page |
 | `styles.css` | Single shared stylesheet — Sanctuary design system, Everyday · Light |
-| `assets/` | App icon, Islamic stroke icons, geometry texture; `screens/` (store screenshots as 660 px WebP, from `eisaal-app/docs/launch/store-assets/` 2026-09-22 + 2026-09-18), `badges/` (official store badges), `og-image.jpg` (Play feature graphic, used for link previews) |
+| `assets/` | App icon, Islamic stroke icons, geometry texture; `screens/` (store screenshots as 660 px WebP, from the 2026-09-22 + 2026-09-18 store sets; the store assets now live outside any repository, in `~/Workspace/Eisaal_Foundation/store-assets` on the owner's Mac, see `docs/cicd/STORE_AUTOMATION.md` in the app), `badges/` (official store badges), `og-image.jpg` (Play feature graphic, used for link previews) |
 
 ## Style rules
 
 The site mirrors the app's Sanctuary theme so it reads as the same product. Tokens in
-`styles.css` (`:root`) are copied from the app's `sanctuary_colors.dart` / `app_fonts.dart`:
+`styles.css` (`:root`) were copied in 2026-08 from the app's Sanctuary theme (`sanctuary_colors.dart` /
+`app_fonts.dart`); the app has since moved to the Rawdah design system with Noto fonts, so the site's fonts no longer match it:
 Cinzel for eyebrows and section labels, Playfair Display for headings, Inter for body; warm-gold
 `primaryBrand` for rims and accents, `primaryText` (#8B7420) for any gold text; the four-level
 depth system as `--elevated` / `--raised` / `--floating` surfaces with their shadows and gold
